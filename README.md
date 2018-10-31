@@ -1,7 +1,7 @@
-Pelican-modified - File modification date fetching for Pelican
-==================================================================
+Pelican-modified - Fetching file modification time
+==================================================
 
-`pelican-modified` is an open source Pelican plugin to fetch file modification date for data files used in the Pelican. The plugin provides an automatic way to print modificatin date of data files used to generate datatables or glossaies (see for example [pelican-datatable](https://github.com/toni-heittola/pelican-datatable), [pelican-bglossary](https://github.com/toni-heittola/pelican-bglossary), and [pelican-btex](https://github.com/toni-heittola/pelican-btex) plugins).
+`pelican-modified` is an open source Pelican plugin to fetch file modification time for data files used in the Pelican. The plugin provides an automatic way to print modification time of data files used to generate datatables or glossaies (see for example [pelican-datatable](https://github.com/toni-heittola/pelican-datatable), [pelican-bglossary](https://github.com/toni-heittola/pelican-bglossary), and [pelican-btex](https://github.com/toni-heittola/pelican-btex) plugins).
 
 **Author**
 
@@ -23,11 +23,11 @@ Enable pelican-modified:
 Usage
 =====
 
-File modification date is injected to {date::<path to file>} tags within the content.
+File modification time is injected to {modified::<path to file>} tags within the content.
 
 Example:
 
-    Date of modification: {date::content/data/data.yaml}
+    Date of modification: {modified::content/data/data.yaml}
 
 ## Parameters
 
@@ -35,4 +35,4 @@ Parameters for the plugin can be set in `pelicanconf.py' with following paramete
 
 | Parameter                 | Type      | Default       | Description  |
 |---------------------------|-----------|---------------|--------------|
-| MODIFIED_DATEFORMAT       | String    | '%Y-%m-%d'    | Date format given to strftime |
+| MODIFIED_FORMAT           | String    | '%Y-%m-%d'    | Format given to strftime |

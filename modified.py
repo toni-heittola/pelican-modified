@@ -19,7 +19,7 @@ __version__ = '0.0.1'
 
 # Default parameter values
 modified_default_settings = {
-    'date-format': '%Y-%m-%d',
+    'format': '%Y-%m-%d',
 }
 
 modified_settings = copy.deepcopy(modified_default_settings)
@@ -27,11 +27,11 @@ modified_settings = copy.deepcopy(modified_default_settings)
 def parse_tags(instance):
     global modified_settings
 
-    regex = r"{date::(.*?)}"
+    regex = r"{modified::(.*?)}"
     from datetime import datetime
     if instance._content is not None:
         content = instance._content
-        if '{date::' in content:
+        if '{modified::' in content:
             matches = re.finditer(regex, content, re.MULTILINE | re.IGNORECASE)
             map = {}
 
@@ -40,7 +40,7 @@ def parse_tags(instance):
 
                 if os.path.exists(filename):
                     modification_timestamp = os.path.getmtime(filename)
-                    modification_date = datetime.utcfromtimestamp(modification_timestamp).strftime(modified_settings['date-format'])
+                    modification_date = datetime.utcfromtimestamp(modification_timestamp).strftime(modified_settings['format'])
                     map[match.group()] = modification_date
 
             for map_item in map:
@@ -51,8 +51,8 @@ def parse_tags(instance):
 def init_default_config(pelican):
     global modified_default_settings
 
-    if 'MODIFIED_DATEFORMAT' in pelican.settings:
-        modified_default_settings['date-format'] = pelican.settings['MODIFIED_DATEFORMAT']
+    if 'MODIFIED_FORMAT' in pelican.settings:
+        modified_default_settings['format'] = pelican.settings['MODIFIED_FORMAT']
 
 
 def register():
