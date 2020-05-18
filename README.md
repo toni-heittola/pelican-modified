@@ -1,7 +1,7 @@
 Pelican-modified - Fetching file modification time
 ==================================================
 
-`pelican-modified` is an open source Pelican plugin to fetch file modification time for data files used in the Pelican. The plugin provides an automatic way to print modification time of data files used to generate datatables or glossaies (see for example [pelican-datatable](https://github.com/toni-heittola/pelican-datatable), [pelican-bglossary](https://github.com/toni-heittola/pelican-bglossary), and [pelican-btex](https://github.com/toni-heittola/pelican-btex) plugins).
+`pelican-modified` is an open source Pelican plugin to fetch file modification time for data files used in the Pelican. The plugin provides an automatic way to print modification time of data files used to generate datatables or glossaries (see for example [pelican-datatable](https://github.com/toni-heittola/pelican-datatable), [pelican-bglossary](https://github.com/toni-heittola/pelican-bglossary), and [pelican-btex](https://github.com/toni-heittola/pelican-btex) plugins).
 
 **Author**
 
